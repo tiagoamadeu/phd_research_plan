@@ -1,0 +1,294 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{ragged2e} % Permite usar \justifying
+\usepackage{csquotes} % necessário para biblatex
+
+% Bibliografia estilo APA com DOIs
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{ref/zotero_refs.bib} % caminho para o teu .bib
+
+\usepackage{multirow} % merge de células
+\usepackage[table,xcdraw]{xcolor} % Para colorir células
+\usepackage{array} % Melhor controle das tabelas
+\usepackage{colortbl} % Melhora a interação entre cor e bordas
+\usepackage{tabularray} % clean tables
+\usepackage{multirow} % Para usar multirow nas células
+\usepackage{hhline}   % Para controle de bordas
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\colorlet{mlightgray}{gray!20}
+\usepackage{graphicx}
+\newcommand\mc[1]{\multicolumn{1}{c}{#1}}
+
+
+\usepackage{fancybox} % For drawing boxes around text
+
+%\usepackage[numbers]{natbib}
+%\usepackage[authoryear]{natbib}
+
+
+%\usepackage{mathpazo} % Palatino
+\usepackage{helvet}  % Helvetica
+
+\usepackage{enumitem}
+\setlength{\parindent}{0pt} % ajustado
+
+% Define espaçamento entre parágrafos
+\setlength{\parskip}{0.5em}
+
+
+% Margin settings
+\geometry{margin=2.5cm}
+
+%hifenização
+\hyphenpenalty=10000
+\tolerance=10000
+\emergencystretch=10pt
+
+\usepackage{datetime}       % para formatos de data customizados
+% Define novo formato: mês completo + ano
+\newdateformat{monthyear}{\monthname[\THEMONTH] \THEYEAR}
+
+% Title
+\title{PhD Research Plan}
+\author{Tiago Henrique}
+\date{\monthyear\today}
+
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents % Automatically generates the table of contents
+%\newpage
+
+\section{Title and Keywords}
+%\label{sec:introduction}
+\textbf{Provisional Title:}
+
+%Geotechnical Structures performance based on Earth Observation Data Pattern Detection.
+
+Geotechnical Structures behaviour analysis using Pattern Detection from Earth Observation Data.
+
+
+\textbf{Keywords:}
+\begin{itemize}[topsep=0pt, itemsep=0pt] % elimina o espaçamento após keywords
+    \item Geotechnical structures behaviour
+    \item Earth observation data
+    \item Machine learning
+    \item Pattern detection %(Pattern recognition, mais utilizado do que detection)
+    \item Time series
+\end{itemize}
+
+
+\section{Summary}
+%\label{sec:objectives}
+
+Understanding and predicting the behaviour of geotechnical structures is still a complex challenge. Traditional methods often fail to fully capture the complexities of geotechnical structures, encompassing challenges like slope instabilities, dam behaviours and landslides. To overcome these challenges, significant advances in earth observation techniques, such as radar interferometry and satellite imagery, as well as in machine learning, have provided recent tools for monitoring and predictive modelling.
+
+This review highlights advancements in the application of earth observation techniques like InSAR for detecting ground displacement and deformation, as well as the role of machine learning in analysing large datasets, detecting patterns and anomalies, and thus predicting geotechnical failures. Despite these advancements, limitations persist in the reliance on high-quality data and the integration of advanced algorithms into practical applications. In this context, this work aims to address these gaps by proposing the development of a numerical toolbox that combines earth observation data with machine learning techniques, offering an approach to geotechnical monitoring and prediction.
+
+
+
+
+\section{State of the Art}
+%\label{sec:literature}
+
+The behavior of geotechnical structures has been the subject of extensive study, particularly in relation to how these structures respond to various environmental conditions, external loads, and natural forces. This includes a wide range of structures—dams, slopes, landslides, and others—each exhibiting specific behaviors.
+
+
+Dams are vital for water retention, flood control, and energy generation. Understanding their behavior is crucial for ensuring their safety and longevity. Studies by \textcite{roqueDamRegionalSafety2015} and~\textcite{mataValidationMachineLearning2021} have contributed to better understand dams performance. The Brumadinho disaster is another example of why monitoring is essential~\parencite{grebbyAdvancedAnalysisSatellite2021}. Slopes also require careful analysis. Their stability under various environmental and loading conditions can significantly impact the surrounding infrastructure and safety. Research has focused on the detection of instabilities with a focus on understanding the physical mechanisms that lead to failure~\parencite{carlaGuidelinesUseInverse2017}. Landslides are natural events that occur when a slope fails, resulting in the downward movement of soil or rock. These events often occur unexpectedly, making early-warning systems critical to mitigating risks. Advances in technology—machine learning and remote sensing—have played a significant role in landslide prediction and monitoring.~\textcite{tehraniMachineLearningLandslide2022} have noted recent progress in using machine learning for landslide studies, particularly in analyzing large datasets to predict failure events more accurately. Studies by~\textcite{wangCreatingBigData2024},~\textcite{ponzianiRegionalscaleInSARInvestigation2023}, \textcite{xuRemoteSensingLandslide2023} and~\textcite{carlaDisplacementLandslideRetaining2018} focus on developing early-warning systems for landslides, highlighting the importance of using geospatial data and machine learning to detect and predict these events.
+
+Overall, the integration of advanced monitoring techniques, particularly through satellite imagery and machine learning, has revolutionized the way we study and monitor geotechnical structures. These technologies allow for real-time monitoring, better prediction of failures, and more effective intervention strategies, ensuring the safety and stability of vital infrastructure.
+
+Recently, earth observation techniques, such as radar interferometry and satellite imagery, have become essential tools for monitoring geotechnical structures~\parencite{salcedo-sanzMachineLearningInformation2020,simoesSatelliteImageTime2021}. These methods enable large-scale, continuous observation, offering valuable insights into displacement, deformation, and geohazard detection. Time-series from earth observation data are particularly useful for uncovering long-term patterns of ground displacement, offering a better understanding of subsidence and deformation processes, and enabling monitoring at a regional or even global scale, providing unprecedented scalability compared to traditional methods.
+
+Among the most widely used techniques, Interferometric Synthetic Aperture Radar (InSAR) has gained prominence for its ability to detect ground displacement with high precision~\parencite{tomasEarthObservationsGeohazards2017}. According to~\textcite{sousaGeohazardsMonitoringAssessment2021}, “Results from both the processing and analysis of a dataset of Earth observation (EO) multi-source data support the conclusion that geohazards can be identified, studied, and monitored effectively using new techniques applied to multi-source EO data.”
+
+Within the InSAR techniques, Differential InSAR (DInSAR) is particularly valuable for surface deformation monitoring, providing high-accuracy results over time~\parencite{derauwOngoingAutomatedGround2020}. Another prominent method, Persistent Scatterer InSAR (PSInSAR), is especially effective for detecting subtle and long-term ground movements by analyzing stable reflectors over time~\parencite{schlogl2021}. Small Baseline Subset (SBAS) techniques optimize time-series analysis by minimizing spatial and temporal baselines between image pairs, making them ideal for localized deformation studies, as highlighted by~\textcite{parkNonlinearModelingSubsidence2021}. These advanced InSAR methods contribute significantly to the effective monitoring and analysis of geotechnical structures, providing valuable data for local and regional-scale studies.
+
+Over the past few years, there has been a significant increase in the study of structural behavior through the application of machine learning techniques~\parencite{gordanStateoftheartReviewAdvancements2022,akosahApplicationArtificialIntelligence2024}. When it comes to geotechnical structures, these methodologies have been extensively applied to enhance understanding, predict structural responses, and identify failure risks under varying conditions~\parencite{shaoApplicationMachineLearning2023,yaghoubiSystematicReviewMetaanalysis2024}.
+
+Supervised learning approaches, which rely on labeled datasets, are widely used to predict structural responses and assess stability under various conditions. On the other hand, unsupervised learning has been essential in identifying hidden patterns and structures within the data~\parencite{daiLandslideIdentificationGradation2022,entezamiDetectionPartiallyStructural2022,bondUnsupervisedMachineLearning2024,festaUnsupervisedDetectionInSAR2023,aghabozorgi2015}. Building upon these foundational methods, deep learning has emerged as a transformative paradigm for studying structural behavior~\parencite{xiMachineLearningApproaches2023,yangLandslideDetectionBased2022,navaLandslideDisplacementForecasting2023,maDeepLearningApproach2021,mirmazloumiInSARTimeSeries2023}. Additionally, anomaly detection and pattern recognition applications have proven crucial in identifying irregularities and deviations in structural performance~\parencite{mililloNeuralNetworkPattern2022}.
+
+As cited by~\textcite{morettoRoleSatelliteInSAR2021}, while certain limitations exist in traditional approaches to monitoring geotechnical structures, Satellite SAR interferometry has demonstrated its effectiveness in the early detection of critical conditions, particularly in landslide-prone areas. Conventional methods often fall short in addressing the complexity of modern geotechnical challenges, particularly when dealing with large datasets and intricate behavioral patterns, as noted by~\textcite{gordanStateoftheartReviewAdvancements2022}. Moreover,~\textcite{salazarAnomalyDetectionDam2021} emphasize that these methods are heavily reliant on high-quality data for model fitting, which can restrict their utility in scenarios with sparse or inconsistent data.
+
+This research proposes a novel numerical toolbox that integrates state-of-the-art machine learning algorithms with earth observation data, addressing current limitations in geotechnical monitoring and prediction.
+
+
+
+
+\section{Objectives}
+%\label{sec:methodology}
+
+This chapter outlines the main tasks that will be completed as part of the research for this thesis.
+
+\begin{enumerate}[label=\Roman*.]  % Roman numbering for sections
+    \item \textbf{Literature Review}
+    \begin{itemize}  % Bullets with circles (•)
+        \item Task 1: Literature review on the performance/behaviour of geotechnical structures, including the definition of typical performance/behaviours.
+        \item Task 2: Literature review on earth observation techniques, time-histories sources, application range.
+        \item Task 3: Literature review on machine learning pattern detection techniques.
+    \end{itemize}
+
+    \item \textbf{Numerical Toolbox}
+    \begin{itemize}  % Bullets with circles (•)
+        \item Task 4: Implement a numerical toolbox with machine learning algorithms for pattern detection of time-histories.
+        \item Task 5: Definition of indicators relevant for each performance/behaviour identified in Task 1.
+    \end{itemize}
+
+    \item \textbf{Case Studies: Test and Validate the System with Real-World Data from Various Geotechnical Structures}
+    \begin{itemize}  % Bullets with circles (•)
+        \item Task 6: Case study 1~-- Application to concrete structures (e.g.~dams).
+        \item Task 7: Case study 2 – Application to earth structures (e.g.~embankments, landslides).
+    \end{itemize}
+
+    \item \textbf{Guidelines and Conclusion}
+    \begin{itemize}  % Bullets with circles (•)
+        \item Task 8: Guidelines and conclusion.
+        \item Task 9: Thesis writing.
+    \end{itemize}
+\end{enumerate}  
+
+\section{Task descriptions}
+%\label{sec:timeline}
+
+
+\textbf{Task 1: Literature review on the performance/behaviour of geotechnical structures, including the definition of typical performance/behaviours}
+
+This task involves conducting a comprehensive review of scientific literature on the behaviour of geotechnical structures. This includes the definition of typical performance indicators such as displacement rates, stress anomalies, and failure modes under various conditions. The review will focus on monitoring methods using earth observation data, such as satellite imagery, and sensor technologies.
+
+\textbf{Task 2: Literature review on earth observation techniques, time-histories sources, application range}
+
+Identify and compile various sources of earth observation data, particularly time-series data related to ground motion and structural movement. This includes datasets such as the European Ground Motion Service (EGMS), Sentinel-1 satellite data, and other relevant sources. The review will focus on understanding how these data sources can be used for monitoring geotechnical structures.
+
+\textbf{Task 3: Literature review on machine learning pattern detection techniques} 
+
+Examine the different factors that affect the behaviour of geotechnical structures over time, both seasonal and non-seasonal. This includes:
+\begin{enumerate}[label=-]
+    \item \textbf{3.1 Materials:} Soil, rock, concrete, and steel properties and how they influence the performance and stability of structures.
+    \item \textbf{3.2 Seasonal behaviour:} How temperature, precipitation, and water content impact structural behaviour.
+    \item \textbf{3.3 Non-seasonal behaviour:} The influence of seismic activity, construction works, and human interventions on geotechnical structures.
+\end{enumerate}
+
+\fbox{%
+  \begin{minipage}[t]{\textwidth}  % Define a caixa para ocupar a largura total da página
+    Output (Tasks 1, 2 and 3) – Paper/Article: Comprehensive Review on Monitoring Geotechnical Structures.
+    \\[0.5em]
+    This paper reviews the integration of earth observation techniques and machine learning applications for monitoring geotechnical structures. It will discuss the use of earth observation time-series data to track ground motion and stability.
+  \end{minipage}
+} \\[10pt]
+
+
+\textbf{Task 4: Implement a numerical toolbox with machine learning algorithms for pattern detection of time-histories}
+
+Develop a numerical toolbox that integrates machine learning algorithms to detect movement patterns in time-series data related to geotechnical structures. The system will process historical displacement data, identify trends, and detect anomalies to enable predictive analysis for geotechnical stability. 
+
+\begin{enumerate}[label=-]
+    \item \textbf{Objective:} To implement a numerical toolbox using machine learning algorithms for detecting movement patterns in geotechnical structures.
+    \item \textbf{Goals:}
+    \begin{itemize}
+        \item Data collection: Gather high-quality time-series data from satellite imagery, ground sensors, etc.
+        \item Pattern recognition: Apply statistical and machine learning methods for detecting trends and anomalies.
+        \item Model development and training: Train machine learning models on historical data and validate predictions.
+        \item Testing and validation: Evaluate the accuracy and reliability of the system using real-world data.
+    \end{itemize}
+\end{enumerate}
+
+
+\textbf{Task 5: Definition of indicators relevant for each performance/behaviour identified in Task 1}
+
+Identify and define the behavioural indicators associated with the performance of geotechnical structures, such as deformation rates, displacement patterns, stress anomalies, and material degradation. These indicators will enable early detection of potential risks and failures.
+
+\fbox{%
+  \begin{minipage}[t]{\textwidth}  % Define a caixa para ocupar a largura total da página
+    Output (Tasks 4 and 5)  – Paper/Article: Development of a machine learning-based toolbox for detecting movement patterns in geotechnical structures: A comparative analysis.
+    \\[0.5em]
+    This article will describe the development and testing of a numerical toolbox integrating machine learning techniques to detect movement patterns in geotechnical structures, comparing the effectiveness of various algorithms.
+  \end{minipage}
+} \\[10pt]
+
+
+\textbf{Task 6: Case study 1 – application to concrete structures (e.g., dams)}
+
+Test the numerical toolbox on real-world data from concrete structures, such as dams, to evaluate its performance in detecting movement patterns and structural behaviour.
+
+\textbf{Task 7: Case study 2 – application to earth structures (e.g., embankments)} 
+
+Apply the developed numerical toolbox to earth structures, such as embankments, for validation and comparison of its effectiveness in monitoring ground displacement and structural stability.
+
+
+\fbox{%
+  \begin{minipage}[t]{\textwidth}  % Define a caixa para ocupar a largura total da página
+    Output (tasks 6 and 7) – Paper/Article: Application of a numerical toolbox for geotechnical structure monitoring.
+    \\[0.5em]
+    This article will present case studies of real-world applications, using data from concrete and earth structures to test the developed numerical toolbox for detecting patterns of movement and instability.
+  \end{minipage}
+} \\[10pt]
+
+
+
+\textbf{Task 8: Guidelines and conclusion}
+
+Summarize the findings and provide practical guidelines for the application of machine learning-based pattern detection in geotechnical engineering. These recommendations will cover how to use the developed system and the insights gained from the case studies.
+
+\textbf{Task 9: Thesis writing}
+
+The final doctoral thesis will consolidate all the tasks, methodologies, case studies, and findings, offering an in-depth analysis of the research process and conclusions about the effectiveness of the proposed numerical toolbox for monitoring geotechnical structures.
+
+
+
+
+\section{Activity planning}
+%\label{sec:results}
+Table 1 presents the activity planning for the PhD research plan.
+
+\begin{table}[h!]
+    \centering
+    %\setlength{\arrayrulewidth}{0.4mm} % Mantém a espessura padrão das linhas
+    \arrayrulecolor{black} % Define a cor das bordas como preto
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{} & \textbf{Semester} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\ %\hline
+    \hhline{|-|-|-|-|-|-|-|-|-|-|}
+    \multirow{3}{*}{I} 
+                  & Task 1 & \cellcolor{gray!100} & \cellcolor{gray!100} &  &  &  &  &  &  \\ %\cline{2-10}
+                  \hhline{|~|-|-|-|-|-|-|-|-|-|}
+                  & Task 2 & \cellcolor{gray!100} & \cellcolor{gray!100} &  &  &  &  &  &  \\ %\cline{2-10}
+                  \hhline{|~|-|-|-|-|-|-|-|-|-|}
+                  & Task 3 & \cellcolor{gray!100} & \cellcolor{gray!100} &  &  &  &  &  &  \\ %\hline
+                  \hhline{|-|-|-|-|-|-|-|-|-|-|}
+    \multirow{2}{*}{II} 
+                  & Task 4 & & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} &  &  \\
+                  %\cline{2-10}
+                  \hhline{|~|-|-|-|-|-|-|-|-|-|}
+                  & Task 5 & & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} &  &  \\ %\hline
+                  \hhline{|-|-|-|-|-|-|-|-|-|-|}
+    \multirow{2}{*}{III} 
+                  & Task 6 & & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} &  &  &  & \\ %\cline{2-10}
+                  \hhline{|~|-|-|-|-|-|-|-|-|-|}
+                  & Task 7 & &  &  & & \cellcolor{gray!100} & \cellcolor{gray!100} & \cellcolor{gray!100} & \\ %\hline
+                  \hhline{|-|-|-|-|-|-|-|-|-|-|}
+    \multirow{2}{*}{IV} 
+                  & Task 8 & &  &  &  &  &  & \cellcolor{gray!100} & \cellcolor{gray!100} \\ %\cline{2-10}
+                  \hhline{|~|-|-|-|-|-|-|-|-|-|}
+                  & Task 9 & &  &  &  &  &  & \cellcolor{gray!100} & \cellcolor{gray!100} \\ %\hline
+                  \hhline{|-|-|-|-|-|-|-|-|-|-|}
+    \end{tabular}
+    \caption{Activity planning for the PhD research plan.}
+    \label{tab:exemplo}
+\end{table}
+
+
+%\section{References}
+\setlength{\bibitemsep}{1em} % ou outro valor, ex: 0.5em, 1.2em
+\printbibliography
+
+
+\end{document}
