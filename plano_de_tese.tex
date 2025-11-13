@@ -251,11 +251,11 @@ Table 1 presents the activity planning for the PhD research plan.
 
 \begin{table}[h!]
     \centering
-    %\setlength{\arrayrulewidth}{0.4mm} % Mantém a espessura padrão das linhas
-    \arrayrulecolor{black} % Define a cor das bordas como preto
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-    \hline
-    \textbf{} & \textbf{Semester} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\ %\hline
+    %\setlength{\arrayrulewidth}{0.4mm}% Mantém a espessura padrão das linhas
+    \arrayrulecolor{black}% Define a cor das bordas como preto
+    \begin{tabular}{|*{10}{c|}} %chktex 44
+    \hline %chktex 44
+    \textbf{Phase} & \textbf{Semester} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\ %\hline
     \hhline{|-|-|-|-|-|-|-|-|-|-|}
     \multirow{3}{*}{I} 
                   & Task 1 & \cellcolor{gray!100} & \cellcolor{gray!100} &  &  &  &  &  &  \\ %\cline{2-10}
@@ -282,13 +282,12 @@ Table 1 presents the activity planning for the PhD research plan.
                   \hhline{|-|-|-|-|-|-|-|-|-|-|}
     \end{tabular}
     \caption{Activity planning for the PhD research plan.}
-    \label{tab:exemplo}
+    %\label{tab:exemplo}
 \end{table}
 
 
 %\section{References}
-\setlength{\bibitemsep}{1em} % ou outro valor, ex: 0.5em, 1.2em
+\setlength{\bibitemsep}{1em}
 \printbibliography
-
 
 \end{document}

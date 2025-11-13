@@ -1,0 +1,96 @@
+# ===========================================
+# LaTeX .gitignore — recomendado para artigos, teses, relatórios
+# ===========================================
+
+# Compilação principal
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+
+# Bibliografia (BibTeX / Biber)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# Índices e glossários
+*.idx
+*.ilg
+*.ind
+*.ist
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+
+# Beamer (apresentações)
+*.nav
+*.snm
+*.vrb
+
+# Auxiliares do makeindex ou latexmk
+*.dvi
+*.ps
+*.xdv
+*.pdfsync
+
+# Backup temporário de editores
+*~
+*.bak
+*.sav
+*.swp
+*.swo
+*.tmp
+
+# Logs do Overleaf / VSCode / TeXstudio
+*.synctex(busy)
+*.log.*
+*.tmp.*
+*.auxlock
+*.texpadtmp
+*.lyx~
+
+# Pastas temporárias
+_build/
+latex.out/
+out/
+tmp/
+temp/
+
+# PDFs gerados automaticamente
+#*.pdf
+
+# ===========================================
+# EXCEÇÕES (ficheiros a manter)
+# ===========================================
+# Mantém o PDF final de submissão (editar o nome conforme o teu projeto)
+!article_final.pdf
+!paper_submission.pdf
+!thesis_final.pdf
+
+# Mantém o diretório com as figuras
+!figures/
+!figures/**
+
+# Mantém o código-fonte e documentos
+!*.tex
+!*.bib
+!*.sty
+!*.cls
+!*.bst
+!*.md
+!README.md
+
+# ===========================================
+# Fim
+# ===========================================
+
