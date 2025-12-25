@@ -103,7 +103,7 @@ This review highlights advancements in the application of earth observation tech
 The behavior of geotechnical structures has been the subject of extensive study, particularly in relation to how these structures respond to various environmental conditions, external loads, and natural forces. This includes a wide range of structures—dams, slopes, landslides, and others—each exhibiting specific behaviors.
 
 
-Dams are vital for water retention, flood control, and energy generation. Understanding their behavior is crucial for ensuring their safety and longevity. Studies by \textcite{roqueDamRegionalSafety2015} and~\textcite{mataValidationMachineLearning2021} have contributed to better understand dams performance. The Brumadinho disaster is another example of why monitoring is essential~\parencite{grebbyAdvancedAnalysisSatellite2021}. Slopes also require careful analysis. Their stability under various environmental and loading conditions can significantly impact the surrounding infrastructure and safety. Research has focused on the detection of instabilities with a focus on understanding the physical mechanisms that lead to failure~\parencite{carlaGuidelinesUseInverse2017}. Landslides are natural events that occur when a slope fails, resulting in the downward movement of soil or rock. These events often occur unexpectedly, making early-warning systems critical to mitigating risks. Advances in technology, machine learning and remote sensing, have played a significant role in landslide prediction and monitoring.~\textcite{tehraniMachineLearningLandslide2022} have noted recent progress in using machine learning for landslide studies, particularly in analyzing large datasets to predict failure events more accurately. Studies by~\textcite{wangCreatingBigData2024},~\textcite{ponzianiRegionalscaleInSARInvestigation2023}, \textcite{xuRemoteSensingLandslide2023} and~\textcite{carlaDisplacementLandslideRetaining2018} focus on developing early-warning systems for landslides, highlighting the importance of using geospatial data and machine learning to detect and predict these events, as well as to automate the assessment of post-disaster structural reconstruction on a regional scale \parencite{foroughnia2025}.
+Dams are vital for water retention, flood control, and energy generation. Understanding their behavior is crucial for ensuring their safety and longevity. Studies by \textcite{roqueDamRegionalSafety2015} and~\textcite{mataValidationMachineLearning2021} have contributed to better understand dams performance. The Brumadinho disaster is another example of why monitoring is essential~\parencite{grebbyAdvancedAnalysisSatellite2021}. Slopes also require careful analysis. Their stability under various environmental and loading conditions can significantly impact the surrounding infrastructure and safety. Research has focused on the detection of instabilities with a focus on understanding the physical mechanisms that lead to failure~\parencite{carlaGuidelinesUseInverse2017}. Landslides are natural events that occur when a slope fails, resulting in the downward movement of soil or rock. These events often occur unexpectedly, making early-warning systems critical to mitigating risks. Advances in technology, machine learning and remote sensing, have played a significant role in landslide prediction and monitoring.~\textcite{tehraniMachineLearningLandslide2022} have noted recent progress in using machine learning for landslide studies, particularly in analyzing large datasets to predict failure events more accurately. Studies by~\textcite{wangCreatingBigData2024},~\textcite{ponzianiRegionalscaleInSARInvestigation2023}, \textcite{xuRemoteSensingLandslide2023} and~\textcite{carlaDisplacementLandslideRetaining2018} focus on developing early-warning systems for landslides, highlighting the importance of using geospatial data and machine learning to detect and predict these events, as well as to automate the assessment of post-disaster structural reconstruction on a regional scale \parencite{foroughnia2025}. Moreover, lag analysis between InSAR displacement and precipitation records has been used to reflect local soil and drainage conditions in heterogeneous environments, as seen in the Calhandriz landslide study \parencite{maes2025}.
 
 Overall, the integration of advanced monitoring techniques, particularly through satellite imagery and machine learning, has revolutionized the way we study and monitor geotechnical structures. These technologies allow for real-time monitoring, better prediction of failures, and more effective intervention strategies, ensuring the safety and stability of vital infrastructure.
 
@@ -130,26 +130,26 @@ This research proposes a novel numerical toolbox that integrates state-of-the-ar
 This chapter outlines the main tasks that will be completed as part of the research for this thesis.
 
 \begin{enumerate}[label=\Roman*.]  % Roman numbering for sections
-    \item \textbf{Literature Review}
+    \item \textbf{Literature review}
     \begin{itemize}  % Bullets with circles (•)
         \item Task 1: Literature review on the performance/behaviour of geotechnical structures, including the definition of typical performance/behaviours.
         \item Task 2: Literature review on earth observation techniques, time-histories sources, application range.
         \item Task 3: Literature review on machine learning pattern detection techniques.
     \end{itemize}
 
-    \item \textbf{Numerical Toolbox}
+    \item \textbf{Numerical toolbox}
     \begin{itemize}  % Bullets with circles (•)
         \item Task 4: Implement a numerical toolbox with machine learning algorithms for pattern detection of time-histories.
         \item Task 5: Definition of indicators relevant for each performance/behaviour identified in Task 1.
     \end{itemize}
 
-    \item \textbf{Case Studies: Test and Validate the System with Real-World Data from Various Geotechnical Structures}
+    \item \textbf{Case Studies: Test and validate the system with real-world data from various geotechnical structures}
     \begin{itemize}  % Bullets with circles (•)
         \item Task 6: Case study 1~-- Application to concrete structures (e.g.~dams).
-        \item Task 7: Case study 2 – Application to earth structures (e.g.~embankments, landslides).
+        \item Task 7: Case study 2 – Application to earth structures (e.g.~embankments).
     \end{itemize}
 
-    \item \textbf{Guidelines and Conclusion}
+    \item \textbf{Guidelines and conclusion}
     \begin{itemize}  % Bullets with circles (•)
         \item Task 8: Guidelines and conclusion.
         \item Task 9: Thesis writing.
@@ -194,7 +194,7 @@ Develop a numerical toolbox that integrates machine learning algorithms to detec
     \item \textbf{Objective:} To implement a numerical toolbox using machine learning algorithms for detecting movement patterns in geotechnical structures.
     \item \textbf{Goals:}
     \begin{itemize}
-        \item Data collection: Gather high-quality time-series data from satellite imagery, ground sensors, etc.
+        \item Data collection: Gather time-series data from satellite imagery and ground sensors.
         \item Pattern recognition: Apply statistical and machine learning methods for detecting trends and anomalies.
         \item Model development and training: Train machine learning models on historical data and validate predictions.
         \item Testing and validation: Evaluate the accuracy and reliability of the system using real-world data.
@@ -208,7 +208,7 @@ Identify and define the behavioural indicators associated with the performance o
 
 \fbox{%
   \begin{minipage}[t]{\textwidth}  % Define a caixa para ocupar a largura total da página
-    Output (Tasks 4 and 5)  – Paper/Article: Development of a machine learning-based toolbox for detecting movement patterns in geotechnical structures: A comparative analysis.
+    Output (Tasks 4 and 5)  – Paper/Article: Development of a machine learning-based toolbox for detecting movement patterns in geotechnical structures.
     \\[0.5em]
     This article will describe the development and testing of a numerical toolbox integrating machine learning techniques to detect movement patterns in geotechnical structures, comparing the effectiveness of various algorithms.
   \end{minipage}
@@ -217,16 +217,13 @@ Identify and define the behavioural indicators associated with the performance o
 
 \textbf{Task 6: Case study 1 – application to concrete structures (e.g., dams)}
 
-Test the numerical toolbox on real-world data from concrete structures, such as dams, to evaluate its performance in detecting movement patterns and structural behaviour.
-
 \textbf{Task 7: Case study 2 – application to earth structures (e.g., embankments)} 
 
-Apply the developed numerical toolbox to earth structures, such as embankments, for validation and comparison of its effectiveness in monitoring ground displacement and structural stability.
-
+Test the numerical toolbox on real-world data of both concrete (dams) (Task 6) and earth (embankments) (Task 7) structures to validate its performance in detecting displacement patterns and monitoring structural stability.
 
 \fbox{%
   \begin{minipage}[t]{\textwidth}  % Define a caixa para ocupar a largura total da página
-    Output (tasks 6 and 7) – Paper/Article: Application of a numerical toolbox for geotechnical structure monitoring.
+    Output (Tasks 6 and 7) – Paper/Article: Application of a numerical toolbox for geotechnical structure monitoring.
     \\[0.5em]
     This article will present case studies of real-world applications, using data from concrete and earth structures to test the developed numerical toolbox for detecting patterns of movement and instability.
   \end{minipage}
@@ -285,6 +282,7 @@ Table 1 presents the activity planning for the PhD research plan.
     %\label{tab:exemplo}
 \end{table}
 
+%\clearpage % 1. Força a saída de todas as tabelas e limpa a página
 
 %\section{References}
 \setlength{\bibitemsep}{1em}
